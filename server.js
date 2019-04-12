@@ -8,7 +8,7 @@ mongoose = require('mongoose'),
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://dbrgvd:Welcome.1@3.0.139.193:27017/cabs_db');
+mongoose.connect('');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
