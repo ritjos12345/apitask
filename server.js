@@ -4,11 +4,12 @@ var express = require('express'),
 
 mongoose = require('mongoose'),
   Task = require('./api/model/apiModel'), //created model loading here
+  Driver = require('./api/model/dapiModel'),
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('');
+mongoose.connect('mongodb://dbrgvd:Welcome.1@3.0.139.193:27017/cabs_db');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));

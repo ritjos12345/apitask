@@ -32,10 +32,6 @@ var TravelSchema = new Schema({
     type: String,
     required: 'Kindly enter the requestor info'
   },
-  from_date: {
-    type: String,
-    required: 'Kindly enter the requestor info'
-  },
   drop_loc: {
     type: String,
     required: 'Kindly enter the requestor info'
@@ -54,7 +50,7 @@ var TravelSchema = new Schema({
     required: 'Kindly enter the requestor info'
   },
   drop_time: {
-    type: String,
+    type: Date,
     required: 'Kindly enter the requestor info'
   },
   hire_type: {
@@ -68,8 +64,11 @@ var TravelSchema = new Schema({
   request_id: {
     type: String,
     required: 'Kindly enter the requestor info'
+  },
+  veh_id: {
+    type: String
   }
-
 });
+
 
 module.exports = mongoose.model('TravelRequest', TravelSchema);
