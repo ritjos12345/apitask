@@ -9,7 +9,7 @@ mongoose = require('mongoose'),
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://dbrgvd:Welcome.1@3.0.139.193:27017/cabs_db');
+mongoose.connect('mongodb://dbrgvd:Welcome.1@52.74.229.193:27017/cabs_db', { useNewUrlParser: true });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,3 +22,5 @@ routes(app); //register the route
 app.listen(port);
 
 console.log('server started on: ' + port);
+
+
