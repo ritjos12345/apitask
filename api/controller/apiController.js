@@ -22,6 +22,7 @@ exports.create_a_task = function (req, res) {
 };
 
 exports.read_a_task = function (req, res) {
+	console.log(req.params)
   Task.findById(req.params.taskId, function (err, task) {
     if (err)
       res.send(err);
@@ -30,7 +31,8 @@ exports.read_a_task = function (req, res) {
 };
 
 exports.update_a_task = function (req, res) {
-  Task.findOneAndUpdate({ _id: req.params.taskId }, req.body, { new: true }, function (err, task) {
+	console.log(req.params.requestid)
+  Task.findOneAndUpdate({request_id: req.params.requestid }, req.body, { new: true }, function (err, task) {
     if (err)
       res.send(err);
     res.json(task);
@@ -40,9 +42,8 @@ exports.update_a_task = function (req, res) {
 
 exports.delete_a_task = function (req, res) {
 
-
   Task.remove({
-    _id: req.params.taskId
+    request_id: req.params.requestid
   }, function (err, task) {
     if (err)
       res.send(err);

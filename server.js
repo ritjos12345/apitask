@@ -1,6 +1,7 @@
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
+var cors = require('cors');	
 
 mongoose = require('mongoose'),
   Task = require('./api/model/apiModel'), //created model loading here
@@ -9,9 +10,9 @@ mongoose = require('mongoose'),
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://dbrgvd:Welcome.1@127.0.0.1:27017/cabs_db', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/cabs_db', {useNewUrlParser: true });
 
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
